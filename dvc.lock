@@ -1,0 +1,76 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python src/download.py
+    deps:
+    - path: src/download.py
+      hash: md5
+      md5: 6a9b4213a15d3eaf1e8acab8397aef2a
+      size: 1255
+    params:
+      params.yaml:
+        download.end_idx: 13250
+        download.start_idx: 13240
+        download.year: 2023
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: src/download.py
+      hash: md5
+      md5: 6a9b4213a15d3eaf1e8acab8397aef2a
+      size: 1255
+    - path: src/prepare.py
+      hash: md5
+      md5: f308946d0b160871af09a3ef8f9d411c
+      size: 1134
+    params:
+      params.yaml:
+        prepare.path: /home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data
+    outs:
+    - path: Ground_truth
+      hash: md5
+      md5: f5c98635fe45a23a594e0dbb90c1445a.dir
+      size: 3469
+      nfiles: 9
+  process:
+    cmd: python src/process.py
+    deps:
+    - path: src/download.py
+      hash: md5
+      md5: 6a9b4213a15d3eaf1e8acab8397aef2a
+      size: 1255
+    - path: src/process.py
+      hash: md5
+      md5: ae21e7074f6f7a388dfaf3758ee924d8
+      size: 925
+    params:
+      params.yaml:
+        process.path: /home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data
+    outs:
+    - path: Input_path
+      hash: md5
+      md5: a788f69092183c540cf9b7d24300643a.dir
+      size: 8048
+      nfiles: 9
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: src/download.py
+      hash: md5
+      md5: 6a9b4213a15d3eaf1e8acab8397aef2a
+      size: 1255
+    - path: src/evaluate.py
+      hash: md5
+      md5: 4a3679c7cb7973626d26f14a5c7e579e
+      size: 1843
+    - path: src/prepare.py
+      hash: md5
+      md5: f308946d0b160871af09a3ef8f9d411c
+      size: 1134
+    - path: src/process.py
+      hash: md5
+      md5: ae21e7074f6f7a388dfaf3758ee924d8
+      size: 925
+    params:
+      params.yaml:
+        evaluate.name_csv: '99999904237'

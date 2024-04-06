@@ -5,8 +5,8 @@ import json
 import os
 
 def evaluate(name_csv):
-    input_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/a04/Input_path/"+name_csv+"_inp.csv"
-    target_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/a04/Ground_truth/"+name_csv+"_GT.csv"
+    input_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/Input_path/"+name_csv+"_inp.csv"
+    target_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/Ground_truth/"+name_csv+"_GT.csv"
     Data_x = pd.read_csv(input_path)
     Data_y = pd.read_csv(target_path)
 
@@ -45,9 +45,9 @@ def evaluate(name_csv):
         json.dump({name_csv: r2_scores}, f, indent=4)
 
 if __name__ == "__main__":
-    params = yaml.safe_load(open("params.yaml"))["Evaluate"]
+    params = yaml.safe_load(open("params.yaml"))["evaluate"]
     name_csv = params["name_csv"]
-    Evaluate(name_csv)
+    evaluate(name_csv)
 
 
  

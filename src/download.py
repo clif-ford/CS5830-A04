@@ -29,7 +29,7 @@ def download(year, start_idx, end_idx):
             f.write(response.content)
 
 if __name__ == "__main__":
-    params = yaml.safe_load(open("params.yaml"))["Data_downloader"]
+    params = yaml.safe_load(open("params.yaml"))["download"]
     year = params["year"]
     start_idx = params["start_idx"]
     end_idx = params["end_idx"]

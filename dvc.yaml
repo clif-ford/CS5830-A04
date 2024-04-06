@@ -1,0 +1,37 @@
+stages:
+  download:
+    cmd: python src/download.py
+    deps:
+      - src/download.py
+    params:
+      - download.end_idx
+      - download.start_idx
+      - download.year
+
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/download.py
+      - src/prepare.py
+    params:
+      - prepare.path
+    outs:
+      - Ground_truth
+  process:
+    cmd: python src/process.py
+    deps:
+      - src/download.py
+      - src/process.py
+    params:
+      - process.path
+    outs:
+      - Input_path
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/download.py
+      - src/evaluate.py
+      - src/prepare.py
+      - src/process.py
+    params:
+      - evaluate.name_csv

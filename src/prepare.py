@@ -24,9 +24,9 @@ def prepare(path):
             target_data.to_csv(os.path.join(save_dir,f'{file[:-4]}_GT.csv'))
 
 if __name__ =="__main__":
-    params = yaml.safe_load(open("params.yaml"))["Prepare"]
+    params = yaml.safe_load(open("params.yaml"))["prepare"]
     data_path = params["path"]
-    Prepare(data_path)
+    prepare(data_path)
 
 
             

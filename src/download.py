@@ -9,8 +9,8 @@ from tqdm import tqdm
 
 def Data_downloader(year, start_idx, end_idx):
     url = "https://www.ncei.noaa.gov/data/local-climatological-data/access/"+f"{year}"+"/"
-    download_path  = "/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data"
-    os.mkdir("/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data")
+    os.mkdir("/home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data")
+    download_path  = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data"
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
     csv_files = []

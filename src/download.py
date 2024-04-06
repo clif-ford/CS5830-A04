@@ -7,7 +7,7 @@ import yaml
 from tqdm import tqdm
 
 
-def Data_downloader(year, start_idx, end_idx):
+def download(year, start_idx, end_idx):
     url = "https://www.ncei.noaa.gov/data/local-climatological-data/access/"+f"{year}"+"/"
     os.mkdir("/home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data")
     download_path  = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/Downloaded_Data"
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     year = params["year"]
     start_idx = params["start_idx"]
     end_idx = params["end_idx"]
-    Data_downloader(year, start_idx, end_idx)
+    download(year, start_idx, end_idx)

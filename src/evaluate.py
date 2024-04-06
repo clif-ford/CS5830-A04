@@ -4,7 +4,7 @@ import yaml
 import json
 import os
 
-def Evaluate(name_csv):
+def evaluate(name_csv):
     input_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/a04/Input_path/"+name_csv+"_inp.csv"
     target_path = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/a04/Ground_truth/"+name_csv+"_GT.csv"
     Data_x = pd.read_csv(input_path)

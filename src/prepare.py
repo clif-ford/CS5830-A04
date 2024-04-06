@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import yaml
 
-def Prepare(path):
+def prepare(path):
     cols_for_target = ['DATE','MonthlyMinimumTemperature','MonthlyDepartureFromNormalAverageTemperature','MonthlyMeanTemperature','MonthlyMaximumTemperature']
     os.mkdir("/home/clifford/clifford/clifflearns/insti/CS5830/a04/Ground_truth")
     save_dir = "/home/clifford/clifford/clifflearns/insti/CS5830/a04/Ground_truth/"

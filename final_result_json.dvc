@@ -1,0 +1,6 @@
+outs:
+- md5: bb4bd7a8329d745c9e7ad203bb0c7ab0.dir
+  size: 338
+  nfiles: 9
+  hash: md5
+  path: final_result_json

@@ -1,0 +1,6 @@
+outs:
+- md5: aaa7683449e1782c5bf270d34c259846.dir
+  size: 296711571
+  nfiles: 9
+  hash: md5
+  path: Downloaded_Data
